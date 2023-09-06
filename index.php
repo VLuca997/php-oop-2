@@ -3,12 +3,13 @@
     require_once __DIR__ . '/arrayList.php';
 
 var_dump($dogCategories);
-var_dump($dogShampoo);
-var_dump($dogFood);
+var_dump($DogProducts);
+var_dump($DogFoods);
+var_dump($DogToys);
 var_dump($catCategories);
 var_dump($catShampoo);
-var_dump($catFood);
-var_dump($antiFlea);
+var_dump($CatFoods);
+var_dump($CatToys);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,22 +44,68 @@ var_dump($antiFlea);
             <header>
                 <h1 class="text-danger text-center">MY PET SHOP</h1>
             </header>
+            <!-- ONLY DOGS -->
             <div class="row">
+                <h3>Prodotti per cani</h3>
                 <?php
                 foreach ($DogProducts as $DogProduct) { ?>
-                <div class="col-4">
+                <div class="col-6">
                     <div class="card">
                         <div class="card-body">
 
                             <h2>
                                 <?= $DogProduct->title ; ?>
                             </h2>
-                            <h4 class="text-success">
+                            <p class="text-success">
                                 <?= $DogProduct->price ; ?> €
-                            </h4>
-                            <h4>
+                            </p>
+                            <p>
                                 <?= $DogProduct->type ; ?>
-                            </h4>
+                            </p>
+                            <p>
+                                <?= $dogCategories->breed ; ?>
+                                <?= $dogCategories->icon; ?>;
+                            </p>
+                        </div>
+                    </div>
+                        
+                </div>
+                <?php }?>
+            </div> 
+
+            <div class="row">
+                <h3>Cibo Per Cani</h3>
+                <?php
+                foreach ($DogFoods as $DogFood) { ?>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2>
+                                <?= $DogFood->title ; ?>
+                            </h2>
+                            <p>
+                                <?= $DogFood->type ; ?>
+                            </p>
+                            <p>
+                                <?= $DogFood->aliment ; ?>
+                            </p>
+                            <p>
+                                <?= $DogFood->info ; ?>
+                            </p>
+                            <p>
+                                <?= $DogFood->quality ; ?>
+                            </p>
+                            <p>
+                                <?= $DogFood->deadline ; ?>
+                            </p>
+                            <p class="text-success">
+                                <?= $DogFood->price ; ?> €
+                            </p>
+                            <p>
+                                <?= $dogCategories->breed ; ?>
+                                <?= $dogCategories->icon; ?>;
+                            </p>
                         </div>
                     </div>
                         
@@ -66,21 +113,119 @@ var_dump($antiFlea);
                 <?php }?>
             </div>
             <div class="row">
+                <h3>Giochi Per Cani</h3>
+                <?php
+                foreach ($DogToys as $DogToy) { ?>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2>
+                                <?= $DogToy->title ; ?>
+                            </h2>
+                            <p class="text-success">
+                                <?= $DogToy->price ; ?> €
+                            </p>
+                            <p>
+                                <?= $DogToy->type ; ?>
+                            </p>
+                            <p>
+                                <?= $dogCategories->breed ; ?>
+                                <?= $dogCategories->icon; ?>;
+                            </p>
+                        </div>
+                    </div>
+                        
+                </div>
+                <?php }?>
+            </div>
+            <div class="row">
+                <h3>Prodotti per Gatti</h3>
                 <?php
                 foreach ($CatProducts as $CatProduct) { ?>
-                <div class="col-4">
+                <div class="col-6">
                     <div class="card">
                         <div class="card-body">
 
                             <h2>
                                 <?= $CatProduct->title ; ?>
                             </h2>
-                            <h4 class="text-success">
+                            <p class="text-success">
                                 <?= $CatProduct->price ; ?> €
-                            </h4>
-                            <h4>
+                            </p>
+                            <p>
                                 <?= $CatProduct->type ; ?>
-                            </h4>
+                            </p>
+                            <p>
+                                <?= $catCategories->breed ; ?>
+                                <?= $catCategories->icon; ?>;
+                            </p>
+                        </div>
+                    </div>
+                        
+                </div>
+                <?php }?>
+            </div>
+            <div class="row">
+                <h3>Cibo Per Gatti</h3>
+                <?php
+                foreach ($CatFoods as $CatFood) { ?>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2>
+                                <?= $CatFood->title ; ?>
+                            </h2>
+                            <p>
+                                <?= $CatFood->type ; ?>
+                            </p>
+                            <p>
+                                <?= $CatFood->aliment ; ?>
+                            </p>
+                            <p>
+                                <?= $CatFood->info ; ?>
+                            </p>
+                            <p>
+                                <?= $CatFood->quality ; ?>
+                            </p>
+                            <p>
+                                <?= $CatFood->deadline ; ?>
+                            </p>
+                            <p class="text-success">
+                                <?= $CatFood->price ; ?> €
+                            </p>
+                            <p>
+                                <?= $catCategories->breed ; ?>
+                                <?= $catCategories->icon; ?>;
+                            </p>
+                        </div>
+                    </div>
+                        
+                </div>
+                <?php }?>
+            </div>
+            <div class="row">
+                <h3>Giochi Per Gatti</h3>
+                <?php
+                foreach ($CatToys as $CatToy) { ?>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2>
+                                <?= $CatToy->title ; ?>
+                            </h2>
+                            <p class="text-success">
+                                <?= $CatToy->price ; ?> €
+                            </p>
+                            <p>
+                                <?= $CatToy->type ; ?>
+                            </p>
+                            <p>
+                                <?= $catCategories->breed ; ?>
+                                <?= $catCategories->icon; ?>;
+                            </p>
                         </div>
                     </div>
                         
